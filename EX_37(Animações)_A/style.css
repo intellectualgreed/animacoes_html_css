@@ -1,0 +1,126 @@
+*, *::after, *::before {box-sizing: border-box;}
+
+.conteudo{
+    background-color: white;
+    padding: 5px;
+    margin-bottom: 3px;
+    border-radius: 5px;
+}
+
+h1, h2, p {
+    text-align: center;
+}
+
+/* 1º Animação - Trocar a cor de fundo da tela continuamente */
+
+/* Etapa 1: Regra de animação (animaFundo) */
+/* Troca a cor de fundo da tela */
+
+@keyframes animaFundo {
+    /* Sintaxe from/to: somente para 2 estados */
+    /* From {background-color: lightblue;}
+    to {background-color: lightgreen;} */
+    0% {background-color: lightblue;}
+    50% {background-color: lightcoral;}
+    100% {background-color: lightgreen;}
+} 
+
+body{
+ font-family: 'Segoe UI';
+
+/* Etapa 2: Executar/chamar a animação (animaFundo) */
+
+/* animation-name: animaFundo; Chamada de animação */
+/* animation-duration: 5s; Duração */
+/* animation-iteration-count: 3; Número de repetições */
+/* animation-iteration-count: infinite; Número de repetições */
+/* animation-direction: alternate; Torna mais suave a transição */
+/* animation-direction: alternate-reverse; Torna mais suave a transição */
+
+/* Versão abreviada das linhas acima */
+animation: animaFundo alternate-reverse infinite 3s;
+}
+
+/* 2º Animação - Faz aparecer o 2º texto com atraso */
+
+/* Etapa 1: regra de animação (aparecer) */
+/* Faz aparecer o 2º texto com atraso */
+
+@keyframes aparecer{
+    from{opacity: 0;}
+    to {opacity:1;}
+}
+
+#dois{
+    /* Etapa 2: Executar / Chamar a animação (parecer) */
+
+    animation-name: aparecer;
+    animation-duration: 5s;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+}
+
+#tres{
+    border: solid 3px;
+    padding: 5px;
+    width: 750px;
+    margin:auto
+}
+
+img{
+    width: 150px;
+    height: 150px;
+}
+
+/* Etapa 1: Regra de animação (animaImagem) */
+/* Girar imagem000 */
+
+@keyframes animaImagem{
+
+    from {transform: translateX(0) rotateZ(0);
+    opacity: 1;}
+
+    to{transform: translateX(570px) rotateZ(360deg);
+        opacity: 1;
+    }
+}
+
+#tres img{
+    /* Etapa 2: Executar/chamar a animaçã (animaImagem) */
+    
+        animation-name: animaImagem;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        /* animation-timing-function: ease-out */
+        animation-timing-function: linear;
+        animation-direction: alternate;
+}
+
+/* 4º Animação - Deslizar imagem */
+
+#quatro{
+    border: solid 3px;
+    padding: 5px;
+    width: 750px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+/* Etapa 1: Regra de animação (animaImagem2) */
+/* Deslizar imagem */
+@keyframes animaImagem2 {
+    from {transform: translateX(0);}
+    to{transform: translateX(580px);}
+}
+
+#quatro img{
+    /* Etapa 2: Executar/chamar a animação (animaImagem2) */
+
+    animation-name: animaImagem2;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+
+
+}
